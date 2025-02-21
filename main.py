@@ -39,7 +39,7 @@ def get_sso_token():
         raise Exception(f"Failed to get token: {result.get('error_description')}")
 
 token = get_sso_token()
-#print(token)
+
 with neo4j.GraphDatabase.driver(
     NEO4J_URI,
     auth=bearer_auth(token)
